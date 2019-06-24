@@ -8,7 +8,7 @@ Dataset = pd.read_csv("Data.csv", names =["Loan_ID","Gender","Married","Dependen
 #Dataset =Dataset.assign(Loan_Status= lambda x:(x['Married' =='Yes'] or x['Self_Employed'] or x['LoanAmount'] >100 or x['Loan_Amount_Term'] >360))
 #https://stackoverflow.com/questions/53011136/python-dataframe-assign-new-column-using-lambda-function-with-2-variables-and-if
 Dataset['Loan_Status']=Dataset.apply(lambda row: 'Y' if (row.Married =='Yes' and row.Self_Employed =='Yes' or row.Education == "Graduate" and row.Property_Area =="Semiurban" and  row.CoapplicantIncome > "100")else 'N', axis=1)
-Dataset.to_csv("New.csv")
+Dataset.to_csv("New.csv",mode = 'w', index=False)
 
 
 Data.csv
