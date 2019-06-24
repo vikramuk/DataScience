@@ -7,7 +7,7 @@ def LoanEligibility(a, b, c, d):
   
 def main():	  
 	# Convert the dictionary into DataFrame  
-	df = pd.read_csv("C:\\Users\\vikram.uk\\PycharmProjects\\untitled\\test_Y3wMUE5_7gLdaTN.csv", names =["Loan_ID","Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"], header=1) 
+	df = pd.read_csv("C:\\Users\\XXYY\\PycharmProjects\\untitled\\TestSample.csv", names =["Loan_ID","Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"], header=1) 
 	print("Original DataFrame:\n", df) 	  
 	df['Loan_Status'] = df.apply(lambda row : LoanEligibility(row['Loan_ID'], 
 					 row['Self_Employed'], row['Education'], row['Property_Area']), axis = 1) 
